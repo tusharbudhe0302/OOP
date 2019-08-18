@@ -31,26 +31,10 @@ namespace Leet_Code
 
         public int[] TwoSum(int[] nums, int target)
         {
-            int[] result = new int[nums.Length];
-            /*I was planningt to do hash table not worth*/
-            for (int i = 0; i < nums.Length; i++)
-            {
-                int CheckNumberIsPresnetInArray = target - nums[i];
-               for(int j =i+1; j < nums.Length; j++)
-                {
-                    if( nums[j] == CheckNumberIsPresnetInArray)
-                    {
-                        result[i] = i;
-                        result[j] = j;
-                        break;
-                    }
-                }
-           
-            }
-            return result;
+            return null;
         }
 
-        public int[,] AddTwoArray(int [,] arrayA, int[,] arrayB)
+        public int[,] MultiplicationOfTwoDimetionArray(int [,] arrayA, int[,] arrayB)
         {
             int[,] result;
             if(arrayA.GetLength(1) != arrayB.GetLength(0))

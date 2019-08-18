@@ -43,9 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayTwoNumber.cs" />
+    <Compile Include="CountCharacters.cs" />
+    <Compile Include="CustomSortString.cs" />
+    <Compile Include="MaximumSizeSubarray.cs" />
+    <Compile Include="MergeTwoList.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Palidrom.cs" />
+    <Compile Include="PascalTraingle.cs" />
+    <Compile Include="ProductOfArrayItSelf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RomanToInt.cs" />
     <Compile Include="solution.cs" />
+    <Compile Include="SqureSortedArray.cs" />
+    <Compile Include="StockQuestion.cs" />
+    <Compile Include="SwapLongestRepeatedCharacterSubstring.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
