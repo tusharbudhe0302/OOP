@@ -46,6 +46,7 @@
     <Compile Include="ArrayTwoNumber.cs" />
     <Compile Include="CountCharacters.cs" />
     <Compile Include="CustomSortString.cs" />
+    <Compile Include="LastSubStringLexicographical.cs" />
     <Compile Include="MaximumSizeSubarray.cs" />
     <Compile Include="MergeTwoList.cs" />
     <Compile Include="Node.cs" />

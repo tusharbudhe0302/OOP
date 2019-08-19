@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Leet_Code
 {
     class SwapLongestRepeatedCharacterSubstring
-    {/// <summary>
+    {
+        /// <summary>
      /// Given a string text, we are allowed to swap two of the characters in the string. Find the length of the longest substring with repeated characters.
 
         //        Example 1:

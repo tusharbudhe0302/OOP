@@ -10,15 +10,15 @@ var squreSortedArray = function (nums) {
     LstNv = K - 1;
     console.log('Before While Loop ->  LstNv  : ' + LstNv + ' FstPv :  ' + FstPv);
     while (LstNv >= 0 || FstPv < nums.length) {
-        console.log('nums[LstNv] : ' + Math.abs(nums[LstNv]) + ' nums[FstPv] : ' + nums[FstPv]);
-        if ((Math.abs(nums[LstNv] * nums[LstNv])) < (nums[FstPv] * nums[FstPv])) {
+        if (nums[LstNv] * nums[LstNv] < nums[FstPv] * nums[FstPv]) {
             result.push(nums[FstPv]);
             LstNv--;
         }
-        if (Math.abs(nums[LstNv] * nums[LstNv]) > (nums[FstPv] * nums[FstPv])) {
+        if (nums[LstNv] * nums[LstNv] > nums[FstPv] * nums[FstPv]) {
             result.push(nums[LstNv] * nums[LstNv]);
             FstPv++;
         }
+        console.log('Result + ' + JSON.stringify(result));
     }
     return result;
 }
