@@ -15,20 +15,35 @@ JavaScript language had no mechanism for reading or manipulating streams of bina
  * The Uint8Array typed array represents an array of 8-bit unsigned integers. The contents are initialized to 0
 
 1. create a TypedArray with a size in bytes
+
 `const typedArray1 = new Int8Array(8);`
+
 `typedArray1[0] = 32;`
+
 `const typedArray2 = new Int8Array(typedArray1);`
+
 `typedArray2[1] = 42;`
+
 `console.log(typedArray1);`
+
 // expected output: Int8Array [32, 0, 0, 0, 0, 0, 0, 0]
+
 `console.log(typedArray2);`
+
 // expected output: Int8Array [32, 42, 0, 0, 0, 0, 0, 0]`
+
 2. The Uint8Array typed array represents an array of 8-bit unsigned integers. The contents are initialized to 0. Once established, you can reference elements in the array using the object's methods, or using standard array index syntax (that is, using bracket notation).
+
 `new Uint8Array();`
+
 `new Uint8Array(length);`
+
 `new Uint8Array(typedArray);`
+
 `new Uint8Array(object);`
+
 `new Uint8Array(buffer [, byteOffset [, length]]);`
+
 ------------
 
 - Buffer.from(), Buffer.alloc(), and Buffer.allocUnsafe()
