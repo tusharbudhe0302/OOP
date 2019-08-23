@@ -8,6 +8,12 @@ namespace Leet_Code
 {
     class CountCharacters
     {
+        /// <summary>
+        /// Array Should Only if matches to chars Param
+        /// </summary>
+        /// <param name="words">["hat","cat","mat","leetcode","eat"]</param>
+        /// <param name="chars">hcmaaetat</param>
+        /// <returns>  ["hat","cat","mat"]</returns>
         public int Countcharacters(string[] words, string chars)
         {
             Dictionary<char,int> map = new Dictionary<char,int>();
@@ -38,11 +44,6 @@ namespace Leet_Code
                 length += currentString.Length;
                 stack.Pop();
             }
-           
-                
-            
-
-
             return length;
         }
     }

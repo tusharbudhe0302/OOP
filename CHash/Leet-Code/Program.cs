@@ -32,7 +32,9 @@ namespace Leet_Code
                 Console.WriteLine("14. Swap For Longest Repeated Character Substring");
                 Console.WriteLine("15. Palindrome ");
                 Console.WriteLine("16. Pascal Tree ");
-                Console.WriteLine("17. Just 17 ");
+                Console.WriteLine("17.  Array Should Only if matches to chars Param Leet Code Weekly ");
+                Console.WriteLine("18.  Longest Sub String");
+                Console.WriteLine("19.  High Proirty Longest Sub String");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 int[] prod, result;
                 if (choice == 0)
@@ -251,11 +253,11 @@ namespace Leet_Code
                         PascalTraingle pascalT = new PascalTraingle();
                         Console.WriteLine("Please enter number for pascal traingle ");
                         int pascalNumber = Convert.ToInt32(Console.ReadLine());
-                       var intList = pascalT.Generate(pascalNumber);
+                        var intList = pascalT.Generate(pascalNumber);
                         foreach (var el in intList)
                         {
                             Console.WriteLine();
-                            foreach(var eel2 in el)
+                            foreach (var eel2 in el)
                             {
                                 Console.Write(eel2);
                             }
@@ -263,17 +265,37 @@ namespace Leet_Code
                         Console.WriteLine();
                         break;
                     #endregion
-                        case 17 :
+                    case 17:
+                        #region Case 17
                         CountCharacters chCount = new CountCharacters();
                         string[] words = { "dyiclysmffuhibgfvapygkorkqllqlvokosagyelotobicwcmebnpznjbirzrzsrtzjxhsfpiwyfhzyonmuabtlwin", "ndqeyhhcquplmznwslewjzuyfgklssvkqxmqjpwhrshycmvrb", "ulrrbpspyudncdlbkxkrqpivfftrggemkpyjl", "boygirdlggnh", "xmqohbyqwagkjzpyawsydmdaattthmuvjbzwpyopyafphx", "nulvimegcsiwvhwuiyednoxpugfeimnnyeoczuzxgxbqjvegcxeqnjbwnbvowastqhojepisusvsidhqmszbrnynkyop", "hiefuovybkpgzygprmndrkyspoiyapdwkxebgsmodhzpx", "juldqdzeskpffaoqcyyxiqqowsalqumddcufhouhrskozhlmobiwzxnhdkidr", "lnnvsdcrvzfmrvurucrzlfyigcycffpiuoo", "oxgaskztzroxuntiwlfyufddl", "tfspedteabxatkaypitjfkhkkigdwdkctqbczcugripkgcyfezpuklfqfcsccboarbfbjfrkxp", "qnagrpfzlyrouolqquytwnwnsqnmuzphne", "eeilfdaookieawrrbvtnqfzcricvhpiv", "sisvsjzyrbdsjcwwygdnxcjhzhsxhpceqz", "yhouqhjevqxtecomahbwoptzlkyvjexhzcbccusbjjdgcfzlkoqwiwue", "hwxxighzvceaplsycajkhynkhzkwkouszwaiuzqcleyflqrxgjsvlegvupzqijbornbfwpefhxekgpuvgiyeudhncv", "cpwcjwgbcquirnsazumgjjcltitmeyfaudbnbqhflvecjsupjmgwfbjo", "teyygdmmyadppuopvqdodaczob", "qaeowuwqsqffvibrtxnjnzvzuuonrkwpysyxvkijemmpdmtnqxwekbpfzs", "qqxpxpmemkldghbmbyxpkwgkaykaerhmwwjonrhcsubchs" };
                         chCount.Countcharacters(words, "usdruypficfbpfbivlrhutcgvyjenlxzeovdyjtgvvfdjzcmikjraspdfp");
                         break;
+                    #endregion
+                    case 18:
+                        #region
+                        StringOfParentheses st = new StringOfParentheses();
+                        Console.WriteLine("Please enter string you wnat to check");
+                        string ipParentheses = Console.ReadLine();
+                        string opParentheses = st.StringOfParenthesesReturn(ipParentheses);
+                        Console.WriteLine(opParentheses);
+                        break;
+                    #endregion
+                    case 19:
+                        #region
+                        StringOfParentheses stLeet = new StringOfParentheses();
+                        Console.WriteLine("Please enter string you want to check");
+                        string ipString = Console.ReadLine();
+                        string resultOPParentheses = stLeet.LongestLavidParenthese(ipString);
+                        Console.WriteLine(resultOPParentheses);
+                        break;
+                    #endregion
+
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
                         Console.ReadLine();
                 }
-
             }
         }
     }

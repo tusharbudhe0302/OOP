@@ -59,6 +59,7 @@
     <Compile Include="solution.cs" />
     <Compile Include="SqureSortedArray.cs" />
     <Compile Include="StockQuestion.cs" />
+    <Compile Include="StringOfParentheses.cs" />
     <Compile Include="SwapLongestRepeatedCharacterSubstring.cs" />
   </ItemGroup>
   <ItemGroup>

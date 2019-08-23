@@ -25,7 +25,7 @@ namespace Leet_Code
     class LastSubStringLexicographical
     {
         public string LastSubstring(string str)
-        {
+        {   
             string mx = "";
             for(int i =0; i < str.Length; i++)
             {
