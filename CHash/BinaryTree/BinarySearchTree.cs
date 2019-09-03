@@ -33,7 +33,6 @@ namespace BinaryTree
             rootInt.left.left = new NodeInt(30);
             rootInt.left.right = new NodeInt(45);
             rootInt.left.left.left = new NodeInt(20);
-            rootInt.left.right = new NodeInt(45);
             rootInt.left.right.left = new NodeInt(42);
             rootInt.left.right.right = new NodeInt(49);
             rootInt.right = new NodeInt(60);
@@ -137,7 +136,7 @@ namespace BinaryTree
                     break;
                 }
             }
-            if(P == null)
+            if (P == null)
             {
                 Console.WriteLine("Item not exist in the tree!");
                 return;
@@ -178,11 +177,11 @@ namespace BinaryTree
             /* 
              * This code will do actual assignment of Child.
              */
-            if(par == null)
+            if (par == null)
             {
                 rootInt = Ch;
             }
-            else if(par.left == P)
+            else if (par.left == P)
             {
                 par.left = Ch;
             }
@@ -300,6 +299,10 @@ namespace BinaryTree
                 Console.WriteLine();
             }
         }
+        /*
+     * Pre Order Of BST*
+     * NLR
+     */
         void diplayTreeDisplayPostOrderR(NodeInt p)
         {
             if (p == null)
@@ -310,6 +313,10 @@ namespace BinaryTree
             diplayTreeDisplayPostOrderR(p.right);
             Console.Write(p.info + " ");
         }
+        /*
+         * Pre Order Of BST*
+         * LRN
+         * */
         void diplayTreeDisplayPreOrderR(NodeInt p)
         {
             if (p == null)
@@ -320,6 +327,50 @@ namespace BinaryTree
             diplayTreeDisplayPreOrderR(p.left);
             diplayTreeDisplayPreOrderR(p.right);
         }
+        public virtual void iterativePreorder(NodeInt NodeInt)
+        {
+
+            // Base Case  
+            if (NodeInt == null)
+            {
+                return;
+            }
+
+            // Create an empty stack and push root to it  
+            Stack<NodeInt> nodeStack = new Stack<NodeInt>();
+            nodeStack.Push(NodeInt);
+
+            /* Pop all items one by one. Do following 
+               for every popped item  
+            a) print it  
+            b) push its right child  
+            c) push its left child  
+            Note that right child is pushed first so  
+            that left is processed first */
+            while (nodeStack.Count > 0)
+            {
+
+                // Pop the top item from stack and print it  
+                NodeInt mynode = nodeStack.Peek();
+                Console.Write(mynode.info + " ");
+                nodeStack.Pop();
+
+                // Push right and left children of 
+                // the popped node to stack  
+                if (mynode.right != null)
+                {
+                    nodeStack.Push(mynode.right);
+                }
+                if (mynode.left != null)
+                {
+                    nodeStack.Push(mynode.left);
+                }
+            }
+        }
+        /*
+        * Pre InOrder Of BST*
+        * LNR
+        */
         void diplayTreeDisplayInOrderR(NodeInt p)
         {
             if (p == null)

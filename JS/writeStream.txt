@@ -1,0 +1,1 @@
+Some Sample : writeStream.write Write Some Extra on Ready : writeStream.on('ready',()=>{}) some manually added read stream data.

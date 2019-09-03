@@ -33,8 +33,20 @@ namespace Leet_Code
                 Console.WriteLine("15. Palindrome ");
                 Console.WriteLine("16. Pascal Tree ");
                 Console.WriteLine("17.  Array Should Only if matches to chars Param Leet Code Weekly ");
-                Console.WriteLine("18.  Longest Sub String");
-                Console.WriteLine("19.  High Proirty Longest Sub String");
+                Console.WriteLine("18.  Longest Vaild Paretheses Online FB  Using Stack");
+                Console.WriteLine("19.  Longest Vaild Paretheses Online FB ");
+                Console.WriteLine("20. Lexington Graph");
+                Console.WriteLine("21. Alien Direcory Leet Code");
+                Console.WriteLine("22. Intersection of Two Arrays");
+                Console.WriteLine("23. Smallest Subtree with all the Deepest Nodess");
+                // https://leetcode.com/interview/reports/SW50ZXJ2aWV3U2Vzc2lvbk5vZGU6MjQzOTQ2
+                Console.WriteLine("24. Goat Latin");
+                Console.WriteLine("25. Fraction to Recurring Decimal");
+                Console.WriteLine("26. Is Complete BST");
+                Console.WriteLine("27. Vertical Order Of BST");
+                Console.WriteLine("28. Clone Graph");
+                Console.WriteLine("29. 3 Sum");
+                Console.WriteLine("30. Longest Airthmatic Possiblity");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 int[] prod, result;
                 if (choice == 0)
@@ -199,7 +211,7 @@ namespace Leet_Code
                         baseArray[3] = -2;
                         baseArray[4] = 7;
                         int k = 3;
-                        int maxLength = MaximumSizeSubarray.findMaxSubArraySumEqualsk(baseArray, k);
+                        int maxLength = MaximumSizeSubarraySumEqualK.findMaxSubArraySumEqualsk(baseArray, k);
                         Console.WriteLine("Max length :" + maxLength);
                         break;
                     #endregion
@@ -290,7 +302,135 @@ namespace Leet_Code
                         Console.WriteLine(resultOPParentheses);
                         break;
                     #endregion
+                    case 20:
+                        #region Lexington Graph
+                        Console.WriteLine("Please enter string to verify lexington");
+                        string lex = Console.ReadLine();
+                        LastSubStringLexicographical lx = new LastSubStringLexicographical();
+                        lx.LastSubstring(lex);
+                        break;
+                    #endregion
+                    case 21:
+                        #region Alien Dictionary
+                        string[] Alienwords = { "hello", "leetcode" };
+                        string order = "hlabcdefgijkmnopqrstuvwxyz";
+                        VerifyingAlienDictionary vrfyAlien = new VerifyingAlienDictionary();
+                        vrfyAlien.IsAlienSorted(Alienwords, order);
+                        break;
+                    #endregion
+                    case 22:
+                        #region Intersection OF Two Array
+                        int[] arrayFirst = { 1, 2, 4, 9 };
+                        int[] arrayLast = { 9, 4, 7, 6 };
+                        IntersectionOfTwoArray IntersetArray = new IntersectionOfTwoArray();
+                        int[] resultIntersection = IntersetArray.checkIntersectionOfTwoArray(arrayFirst, arrayLast);
+                        break;
+                    #endregion
+                    case 23:
+                        #region Smallest Subtree with all the Deepest Nodes
+                        TreeNode root = new TreeNode(3);
+                        root.left = new TreeNode(5);
+                        root.right = new TreeNode(1);
+                        root.left.left = new TreeNode(6);
+                        root.left.right = new TreeNode(2);
+                        root.left.right.left = new TreeNode(7);
+                        root.left.right.right = new TreeNode(4);
+                        root.right.left = new TreeNode(0);
+                        root.right.right = new TreeNode(8);
+                        /*
+                         * 1. Calculate Depth of Tree = Depth Of tree => 1 + Right Or Left Side or tree, Whichever is bigger the add 1 to it. It will be depth of Tree
+                         * 2. Go to left of right to math deplth from step 1. Return the Node which meet target. Initital deplth will be 1 target is step 1.
+                         */
+                        SmallestSubtreeWithAllDeepestNodes smallestSubTree = new SmallestSubtreeWithAllDeepestNodes();
+                        TreeNode resultSmallestTree = smallestSubTree.subtreeWithAllDeepest(root);
+                        Console.WriteLine("Node Vaule " + resultSmallestTree.val + " left " + resultSmallestTree.left.val + " right " + resultSmallestTree.right.val);
+                        break;
+                    #endregion
+                    case 24:
+                        #region Goat Latin
+                        Console.WriteLine("Please enter string you want to takt to Goat");
+                        string aLongString = Console.ReadLine();
+                        GoatLatin gt = new GoatLatin();
+                        Console.WriteLine(gt.ConvertGoatLanguage(aLongString));
+                        break;
+                    #endregion
+                    case 25:
+                        #region Factorial To decimal
+                        FractionToDecimal ftd = new FractionToDecimal();
+                        Console.WriteLine("Please enter numerator");
+                        int numerator = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Please enter denominator");
+                        int denominator = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Result : ");
+                        Console.WriteLine(ftd.FractionToDecimalCalGeek(numerator, denominator));
+                        break;
+                    #endregion
+                    case 26:
+                    #region Is Complete BST
+                        IsCompleteBST isBT = new IsCompleteBST();
+                        TreeNodeBST bstCompleteValid = new TreeNodeBST(1);
+                        bstCompleteValid.left = new TreeNodeBST(2);
+                        bstCompleteValid.right = new TreeNodeBST(3);
+                        /* Un Comment below line to get BST*/
+                        // bstCompleteValid.left.left = new TreeNodeBST(4);
+                        bstCompleteValid.left.right = new TreeNodeBST(5);
+                        bstCompleteValid.right.left = new TreeNodeBST(6);
+                        bool IsBST = isBT.CheckIsCompleteBST(bstCompleteValid);
+                        if (IsBST)
+                            Console.WriteLine("Is Complete BST ");
+                        else
+                            Console.WriteLine("Is NOT Complete BST ");
+                        break;
+                    #endregion
+                    case 27:
+                        #region Vertical Order Of Binary Tree
+                        TreeNode rt = new TreeNode(3);
+                        rt.left = new TreeNode(9);
+                        rt.left.left = new TreeNode(4);
+                        rt.left.right = new TreeNode(0);
+                        rt.right = new TreeNode(8);
+                        rt.right.left = new TreeNode(1);
+                        rt.right.right = new TreeNode(7);
+                        VerticalOrderOfBinaryTree vbst = new VerticalOrderOfBinaryTree();
+                        // var myVericalOrderList =  vbst.getListOfLevelOrder(rt);
+                        vbst.PrintVerticalOrderOfBESTQeue(rt);
+                        break;
+                    #endregion
+                    case 28:
+                        #region Clone Of Graph
+                        CloneGraphNode node0 = new CloneGraphNode(0);
+                        CloneGraphNode node1 = new CloneGraphNode(1);
+                        CloneGraphNode node2 = new CloneGraphNode(2);
 
+                        List<CloneGraphNode> list0 = new List<CloneGraphNode>();
+                        list0.Add(node1);
+                        list0.Add(node2);
+                        node0.neighbors = list0;
+
+                        node1.neighbors = new List<CloneGraphNode>();
+                        node1.neighbors.Add(node2);
+
+                        node2.neighbors = new List<CloneGraphNode>();
+                        node2.neighbors.Add(node2);
+
+                        //   CloneGraph clngraph = new CloneGraph();
+                        CloneGraph.cloneGraph(node0);
+                        break;
+                    #endregion
+                    case 29:
+                        #region 3 Sum
+                        _3Sum sum = new _3Sum();
+                        List<int> sumArrayInput = new List<int> { -1, 1, 0, 5 };
+                        sum.SolveThreeSum(sumArrayInput);
+                        break;
+                    #endregion
+                    case 30:
+                        #region longest airthmatic expression
+                        int[] set1 = { 1, 7, 10, 13, 14, 19 };
+                        int n1 = set1.Length;
+                        LongestAirthmaticPossibility.lenghtOfLongestAP(set1, n1);
+                        break;
+                        #endregion
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;

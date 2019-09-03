@@ -6,9 +6,18 @@ With TypedArray now available, the Buffer class implements the Uint8Array API in
 
 Instances of the Buffer class are similar to arrays of integers from 0 to 255 (other integers are coerced to this range by & 255 operation) but correspond to fixed-sized, raw memory allocations outside the V8 heap. The size of the Buffer is established when it is created and cannot be changed.
 
-The Buffer class is within the global scope, making it unlikely that one would need to ever use** require('buffer').Buffer**.
+The Buffer class is within the global scope, making it unlikely that one would need to ever use** require('buffer')**.
 
 > require('buffer').Buffer
+> require('buffer')
+
+`var buffer = new Buffer()`
+
+*Basic Methods*
+ - from
+ - alloc
+ - allocUnsafe
+
 
 JavaScript language had no mechanism for reading or manipulating streams of binary data.
  *  Buffer class was introduced as part of the Node.js API to enable interaction with octet streams in TCP streams, file system operations, and other contexts
@@ -153,3 +162,10 @@ The contents are initialized to 0. Once established, you can reference elements 
 - Buffer Constants
 	buffer.constants.MAX_LENGTH
 	buffer.constants.MAX_STRING_LENGTH
+
+
+    ---------
+    
+    **Notes : 
+    1. Buffer Over Come Problem of Event Emitter.Event Emitter will not return callback results.
+    2. Once Event occured Save it to buffer memory,

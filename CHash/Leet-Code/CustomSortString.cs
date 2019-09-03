@@ -14,26 +14,19 @@ namespace Leet_Code
             // Step 2 : Scan String S and Print Number of Char in T
             // Step 3 : Scan Frequency again and append anything Non Zero
             // Time Complexity O(n)
-            ///S and T are strings composed of lowercase letters. In S, no letter occurs more than once.
-
-            //            S was sorted in some custom order previously. We want to permute the characters of T so that they match the order that S was sorted. More specifically, if x occurs before y in S, then x should occur before y in the returned string.
-
-            //Return any permutation of T(as a string) that satisfies this property.
-
+            //S and T are strings composed of lowercase letters. In S, no letter occurs more than once.
+            // S was sorted in some custom order previously. We want to permute the characters of T so that they match the order that S was sorted. More specifically, if x occurs before y in S, then x should occur before y in the returned string.
+             //Return any permutation of T(as a string) that satisfies this property.
             //Example :
             //Input:
-            //            S = "cba"
+            //S = "cba"
             //T = "abcd"
             //Output: "cbad"
             //Explanation:
             //            "a", "b", "c" appear in S, so the order of "a", "b", "c" should be "c", "b", and "a".
             //            Since "d" does not appear in S, it can be at any position in T. "dcba", "cdba", "cbda" are also valid outputs.
-
-
-
             //Note:
-
-            //            S has length at most 26, and no character is repeated in S.
+            // S has length at most 26, and no character is repeated in S.
             //T has length at most 200.
             //S and T consist of lowercase letters only.
             int[] frequency = new int[26];
@@ -78,23 +71,17 @@ namespace Leet_Code
             }
             return newSb.ToString();
         }
-
         private void customMergeSort(int[] distinct, char[] a, char[] aux, int low, int high)
         {
             if (low >= high)
             {
                 return;
             }
-
             int mid = low + (high - low) / 2;
-
             customMergeSort(distinct, a, aux, low, mid);
             customMergeSort(distinct, a, aux, mid + 1, high);
-
             customMerge(distinct, a, aux, low, mid, high);
-
         }
-
         private void customMerge(int[] dict, char[] A, char[] Aux, int lo, int mid, int hi)
         {
 

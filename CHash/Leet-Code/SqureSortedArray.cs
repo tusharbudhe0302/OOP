@@ -20,7 +20,7 @@ namespace Leet_Code
         {
             int[] result = new int[nums.Length];
             int K = 0; int FstPv = -1, LstNv = -1, i = 0;
-            for (K = 0; K < nums.Length; K++)
+            for (K=0; K < nums.Length; K++)
                 if (nums[K] >= 0)
                     break;
 

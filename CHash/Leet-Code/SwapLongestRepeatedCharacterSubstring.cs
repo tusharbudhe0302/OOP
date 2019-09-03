@@ -23,7 +23,7 @@ namespace Leet_Code
         //Explanation: Swap 'b' with the last 'a' (or the first 'a'), and we get longest repeated character substring "aaaaaa", which its length is 6.
         //Example 3:
 
-        //Input: text = "aaabbaaa"
+        //Input: text = "aaabbaaa" left 12312123 rightr 12311123
         //Output: 4
         //Example 4:
 
