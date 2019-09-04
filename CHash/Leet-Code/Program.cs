@@ -41,7 +41,7 @@ namespace Leet_Code
                 Console.WriteLine("23. Smallest Subtree with all the Deepest Nodess");
                 // https://leetcode.com/interview/reports/SW50ZXJ2aWV3U2Vzc2lvbk5vZGU6MjQzOTQ2
                 Console.WriteLine("24. Goat Latin");
-                Console.WriteLine("25. Fraction to Recurring Decimal");
+                Console.WriteLine("25. Serialize And Deserialize Binary Tree");
                 Console.WriteLine("26. Is Complete BST");
                 Console.WriteLine("27. Vertical Order Of BST");
                 Console.WriteLine("28. Clone Graph");
@@ -257,7 +257,9 @@ namespace Leet_Code
                         #region Case 15
                         Console.WriteLine("Please enter string of your choice");
                         string Palinedrome = Console.ReadLine();
-                        Palindrome.PrintPalidrom(Palinedrome);
+                        Palindrome palindrome = new Palindrome();
+                        List<string> palindromeResults = new List<string>();
+                        palindromeResults = palindrome.ValidPalindromeSubmittedLeetCodeRecursive(Palinedrome);
                         break;
                     #endregion
                     case 16:
@@ -294,7 +296,7 @@ namespace Leet_Code
                         break;
                     #endregion
                     case 19:
-                        #region
+                        #region Parenthesis
                         StringOfParentheses stLeet = new StringOfParentheses();
                         Console.WriteLine("Please enter string you want to check");
                         string ipString = Console.ReadLine();
@@ -355,14 +357,15 @@ namespace Leet_Code
                         break;
                     #endregion
                     case 25:
-                        #region Factorial To decimal
-                        FractionToDecimal ftd = new FractionToDecimal();
-                        Console.WriteLine("Please enter numerator");
-                        int numerator = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Please enter denominator");
-                        int denominator = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Result : ");
-                        Console.WriteLine(ftd.FractionToDecimalCalGeek(numerator, denominator));
+                        #region Serialize and Deserialize binary tree
+                        TreeNodeSerDesiralize rootSerDe = new TreeNodeSerDesiralize(1);
+                        rootSerDe.left = new TreeNodeSerDesiralize(2);
+                        rootSerDe.right = new TreeNodeSerDesiralize(3);
+                        rootSerDe.right.left = new TreeNodeSerDesiralize(4);
+                        rootSerDe.right.right = new TreeNodeSerDesiralize(5);
+                        SerDesiralizeBT serDesiralizeBT = new SerDesiralizeBT();
+                        var serializedString = serDesiralizeBT.serialize(rootSerDe);
+                        var deserializedNode = serDesiralizeBT.deserialize(serializedString);
                         break;
                     #endregion
                     case 26:

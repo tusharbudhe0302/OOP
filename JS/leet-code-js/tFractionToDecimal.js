@@ -37,6 +37,7 @@ var fractionToDecimal = function (numerator, denominator) {
         map[remin] = answer.length;
         res = ~~(remin / den);
         answer += res;
+        // console.log(answer);
         remin = (remin % den) * 10;
     }
 

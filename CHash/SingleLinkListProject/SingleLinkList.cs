@@ -364,7 +364,15 @@ namespace LinkListProject
                 }
             }
         }
+        public Node reverseListRecursive(Node x)
+        {
+            if (x == null || x.link == null) return x;
+            Node temp = reverseListRecursive(x.link);
+            x.link.link = x;
+            x.link = null;
+            return temp;
 
+        }
         internal void BubbleSortListData()
         {
             Node q, end;

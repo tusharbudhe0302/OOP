@@ -17,8 +17,8 @@ namespace LinkListProject
             SingleLinkList list = new SingleLinkList();
             DoubleLinkList doubleList = new DoubleLinkList();
             int item;
-            bool singlelinklist = false;
-            bool doublelinklist = true;
+            bool singlelinklist = true;
+            bool doublelinklist = false;
             while (singlelinklist)
             {
                 Console.WriteLine();
@@ -42,10 +42,11 @@ namespace LinkListProject
                 Console.WriteLine("17. Delete cycle");
                 Console.WriteLine("18. Remove cycle");
                 Console.WriteLine("19. Create list");
-                Console.WriteLine("20. Quit");
+                Console.WriteLine("20. Reverse List Recursive");
+                Console.WriteLine("21. Quit");
                 Console.WriteLine("Please Enter Your Choice :");
                 choice = Convert.ToInt32(Console.ReadLine());
-                if (choice == 20)
+                if (choice == 21)
                 {
                     Console.WriteLine("Program End........");
                     break;
@@ -137,6 +138,12 @@ namespace LinkListProject
                         break;
                     case 19:
                         list.CreateList();
+                        break;
+                    case 20:
+                        Node root = new Node(5);
+                        root.link = new Node(7);
+                        root.link.link = new Node(9);
+                        Node res = list.reverseListRecursive(root);
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");

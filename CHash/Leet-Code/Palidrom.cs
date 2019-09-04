@@ -21,9 +21,6 @@ namespace Leet_Code
             }
             else
             {
-
-
-
                 Console.WriteLine(s + " is  not Palindrome.");
             }
         }
@@ -62,6 +59,32 @@ namespace Leet_Code
                 Console.WriteLine(s + " is  not Palindrome.");
             }
             return isPalindrome;
+        }
+        List<string> validPalindrome = new List<string>();
+        public List<string> ValidPalindromeSubmittedLeetCodeRecursive(string s)
+        {
+            char[] ip = s.ToCharArray();
+            Array.Reverse(ip);
+            string reverse = new string(ip);
+            bool isPalindrome = reverse.Equals(s, StringComparison.OrdinalIgnoreCase);
+            if (isPalindrome)
+            {
+                if (!validPalindrome.Contains(s))
+                    validPalindrome.Add(s);
+                //   Console.WriteLine(s + " is Palindrome.");
+                //     return true;
+            }
+            else
+            {
+                for (int i = s.Length - 1; i >= 0; i--)
+                {
+                    string convertToValidPalidrome = s;
+                    string checkPlaidrom = convertToValidPalidrome.Remove(i, 1);
+                    ValidPalindromeSubmittedLeetCodeRecursive(checkPlaidrom);
+                }
+                Console.WriteLine(s + " is  not Palindrome.");
+            }
+            return validPalindrome;
         }
     }
 
