@@ -60,9 +60,10 @@ namespace Leet_Code
             // finding ones to calculate   
             // their contribution.  
            int R = mat.GetLength(0);
-           int C = mat[0].GetLength(1);
+           
             for (int i = 0; i < R; i++)
             {
+                int C = mat[i].GetLength(1);
                 for (int j = 0; j < C; j++)
                 {
                     if (mat[i][j] == 1)

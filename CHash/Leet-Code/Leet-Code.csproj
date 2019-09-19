@@ -53,6 +53,7 @@
     <Compile Include="CloneGraph.cs" />
     <Compile Include="CountCharacters.cs" />
     <Compile Include="CustomSortString.cs" />
+    <Compile Include="FindAnagrams.cs" />
     <Compile Include="GoatLatin.cs" />
     <Compile Include="IntersectionOfTwoArray.cs" />
     <Compile Include="IsCompleteBST.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="NextPermutationInt.cs" />
     <Compile Include="NextPermutationString.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="NumarrayImmutable.cs" />
     <Compile Include="Palidrom.cs" />
     <Compile Include="PascalTraingle.cs" />
     <Compile Include="ProductOfArrayItSelf.cs" />
@@ -72,12 +74,12 @@
     <Compile Include="PushZero.cs" />
     <Compile Include="RomanToInt.cs" />
     <Compile Include="SerializeDeserializeBinaryTree.cs" />
-    <Compile Include="smallestSubTreeDepestNode.cs" />
     <Compile Include="SmallestSubtreeWithAllDeepestNodes.cs" />
     <Compile Include="solution.cs" />
     <Compile Include="SqureSortedArray.cs" />
     <Compile Include="StockQuestion.cs" />
     <Compile Include="StringOfParentheses.cs" />
+    <Compile Include="SumRectangle.cs" />
     <Compile Include="SwapLongestRepeatedCharacterSubstring.cs" />
     <Compile Include="VerifyingAlienDictionary.cs" />
     <Compile Include="VerticalOrderOfBinaryTree.cs" />

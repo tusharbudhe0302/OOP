@@ -32,6 +32,10 @@ namespace Leet_Code
                 if (mx.CompareTo(str.Substring(i)) <= 0)
                 {
                     mx = str.Substring(i);
+                    //mx = abab  i =0
+                    //mx = bab  i =1 It should never fo into loop.
+
+                    //Console.WriteLine(" String  " + mx + " Index " + i);
                 }
             }
             return mx;

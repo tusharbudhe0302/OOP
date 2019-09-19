@@ -19,7 +19,7 @@ namespace Leet_Code
         public int[] SortedSumArray(int[] nums)
         {
             int[] result = new int[nums.Length];
-            int K = 0; int FstPv = -1, LstNv = -1, i = 0;
+            int K; int FstPv, LstNv, i = 0;
             for (K=0; K < nums.Length; K++)
                 if (nums[K] >= 0)
                     break;

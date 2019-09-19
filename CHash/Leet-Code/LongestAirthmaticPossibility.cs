@@ -28,7 +28,7 @@ namespace Leet_Code
             // in AP with last number of set as  
             // second element in AP  
             for (int i = 0; i < n; i++)
-                L[i, n - 1] = 2;
+            { L[i, n - 1] = 2; }
 
             // Consider every element as  
             // second element of AP  
@@ -39,7 +39,7 @@ namespace Leet_Code
                 while (i >= 0 && k <= n - 1)
                 {
                     if (set[i] + set[k] < 2 * set[j])
-                        k++;
+                    { k++; }
 
                     // Before changing i, set L[i][j] as 2  
                     else if (set[i] + set[k] > 2 * set[j])

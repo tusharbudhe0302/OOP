@@ -45,6 +45,7 @@ namespace Leet_Code
             PrintVirtualOrder(innerList,root.left, lowCount, hd - 1);
             PrintVirtualOrder(innerList,root.right, lowCount,  hd + 1);
         }
+
         Dictionary<int, int> map = new Dictionary<int, int>();
         public void PrintVerticalOrderOfBESTQeue(TreeNode root)
         {

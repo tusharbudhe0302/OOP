@@ -47,6 +47,7 @@ namespace Leet_Code
                 Console.WriteLine("28. Clone Graph");
                 Console.WriteLine("29. 3 Sum");
                 Console.WriteLine("30. Longest Airthmatic Possiblity");
+                Console.WriteLine("31. Jagged Array");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 int[] prod, result;
                 if (choice == 0)
@@ -101,6 +102,7 @@ namespace Leet_Code
                         price[3] = 3;
                         price[4] = 6;
                         price[5] = 4;
+                 
                         int maxProfit = Q.MaxProfit(price);
                         Console.WriteLine("Max Profit : " + maxProfit);
                         break;
@@ -120,8 +122,8 @@ namespace Leet_Code
                         prod[2] = 5;
                         prod[3] = 6;
                         prod[4] = 2;
-
-                        int[] resultProd = prd.ProductOfArray(prod, prod.Length);
+                        int[] currentPrice = new int[] { 1, 2, 3, 4 };
+                        int[] resultProd = prd.ProductOfArray(currentPrice, currentPrice.Length);
                         Console.WriteLine("Array Product is :");
                         for (int i = 0; i < resultProd.Length; i++)
                         {
@@ -369,7 +371,7 @@ namespace Leet_Code
                         break;
                     #endregion
                     case 26:
-                    #region Is Complete BST
+                        #region Is Complete BST
                         IsCompleteBST isBT = new IsCompleteBST();
                         TreeNodeBST bstCompleteValid = new TreeNodeBST(1);
                         bstCompleteValid.left = new TreeNodeBST(2);
@@ -433,7 +435,18 @@ namespace Leet_Code
                         int n1 = set1.Length;
                         LongestAirthmaticPossibility.lenghtOfLongestAP(set1, n1);
                         break;
-                        #endregion
+                    #endregion
+                    case 31:
+                        #region SumRegion
+                        int[][] matrix = { new int[] { 3, 0, 1, 4, 2 }, new int[] { 5, 6, 3, 2, 1 }, new int[] { 1, 2, 0, 1, 5 }, new int[] { 4, 1, 0, 1, 7 }, new int[] { 1, 0, 3, 0, 5 }};
+                        SumRectangle sumRectangle = new SumRectangle(matrix);
+                        // Console.WriteLine("Sum Of matrix in Box is :" + sumRectangle.SumRegion(2, 1, 4, 3));
+                        //Console.WriteLine("Sum Of matrix in Box is :" + sumRectangle.SumRegion2(2, 1, 4, 3));
+                        int[] Inums = new int []{ -2, 0, 3, -5, 2, -1 };
+                        NumarrayImmutable numarrayImmutable = new NumarrayImmutable(Inums);
+                        Console.WriteLine("Sum Of Immutable : " +  numarrayImmutable.SumRange(0, 2));
+                        break;
+                    #endregion
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
