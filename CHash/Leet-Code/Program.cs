@@ -48,6 +48,8 @@ namespace Leet_Code
                 Console.WriteLine("29. 3 Sum");
                 Console.WriteLine("30. Longest Airthmatic Possiblity");
                 Console.WriteLine("31. Jagged Array");
+                Console.WriteLine("32. Minimum time required to produce m items");
+                Console.WriteLine("33. Minimum time required to produce m items");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 int[] prod, result;
                 if (choice == 0)
@@ -102,7 +104,7 @@ namespace Leet_Code
                         price[3] = 3;
                         price[4] = 6;
                         price[5] = 4;
-                 
+
                         int maxProfit = Q.MaxProfit(price);
                         Console.WriteLine("Max Profit : " + maxProfit);
                         break;
@@ -438,13 +440,31 @@ namespace Leet_Code
                     #endregion
                     case 31:
                         #region SumRegion
-                        int[][] matrix = { new int[] { 3, 0, 1, 4, 2 }, new int[] { 5, 6, 3, 2, 1 }, new int[] { 1, 2, 0, 1, 5 }, new int[] { 4, 1, 0, 1, 7 }, new int[] { 1, 0, 3, 0, 5 }};
+                        int[][] matrix = { new int[] { 3, 0, 1, 4, 2 }, new int[] { 5, 6, 3, 2, 1 }, new int[] { 1, 2, 0, 1, 5 }, new int[] { 4, 1, 0, 1, 7 }, new int[] { 1, 0, 3, 0, 5 } };
                         SumRectangle sumRectangle = new SumRectangle(matrix);
                         // Console.WriteLine("Sum Of matrix in Box is :" + sumRectangle.SumRegion(2, 1, 4, 3));
                         //Console.WriteLine("Sum Of matrix in Box is :" + sumRectangle.SumRegion2(2, 1, 4, 3));
-                        int[] Inums = new int []{ -2, 0, 3, -5, 2, -1 };
+                        int[] Inums = new int[] { -2, 0, 3, -5, 2, -1 };
                         NumarrayImmutable numarrayImmutable = new NumarrayImmutable(Inums);
-                        Console.WriteLine("Sum Of Immutable : " +  numarrayImmutable.SumRange(0, 2));
+                        Console.WriteLine("Sum Of Immutable : " + numarrayImmutable.SumRange(0, 2));
+                        break;
+                    #endregion
+                    case 32:
+                        #region Minimum time required to create items
+                        //int[] arr = { 1, 2, 3 };
+                        //int n = arr.Length;
+                        //int m = 11;
+                        int[] arr = { 1,2,5,10,35,89 };
+                        int n = arr.Length;
+                        int m = 6;
+                        MinTimeToCreateProduct minTimeToCreateProduct = new MinTimeToCreateProduct();
+                        Console.WriteLine("Minimum time required to create Product " + minTimeToCreateProduct.minTime(arr, n, m));
+                        break;
+                    #endregion
+                    case 33:
+                        #region
+                        FindingCriticalPoint findingCriticalPoint = new FindingCriticalPoint();
+                       var op=   findingCriticalPoint.criticalConnections(4, findingCriticalPoint.createDummyData());
                         break;
                     #endregion
                     default:

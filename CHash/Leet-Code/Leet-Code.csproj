@@ -54,6 +54,7 @@
     <Compile Include="CountCharacters.cs" />
     <Compile Include="CustomSortString.cs" />
     <Compile Include="FindAnagrams.cs" />
+    <Compile Include="FindingCriticalPoint.cs" />
     <Compile Include="GoatLatin.cs" />
     <Compile Include="IntersectionOfTwoArray.cs" />
     <Compile Include="IsCompleteBST.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="LongestAirthmaticPossibility.cs" />
     <Compile Include="MaximumSizeSubarraySumEqualK.cs" />
     <Compile Include="MergeTwoList.cs" />
+    <Compile Include="MinTimeToCreateProduct.cs" />
     <Compile Include="NextPermutationInt.cs" />
     <Compile Include="NextPermutationString.cs" />
     <Compile Include="Node.cs" />
