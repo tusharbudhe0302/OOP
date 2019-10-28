@@ -1,4 +1,4 @@
-var Task = require('./task');
+var Task = require('./task');  // Object
 /**Set Up Enviroment . Subject declaration*/
 var notificationService = function () {
     var message = 'Notifying';
@@ -19,7 +19,7 @@ var auditingService = function () {
         console.log(`${message}  ${task.user} for  task : ${task.name}`);
     }
 };
-
+/** Observer */
 function ObserverList() {
     this.observerList = [];
 };
@@ -68,13 +68,13 @@ ObservableTask.prototype.save = function () {
 ObservableTask.prototype.removeObserver = function (observer) {
     this.observers.removeAt(this.observers.indexOf(observer, 0))
 }
-var task1 = new ObservableTask({ name: 'create demo for constructor', user: 'John' });
-var ns = new notificationService();
-var ls = new loggingService();
-var as = new auditingService();
-task1.addObserver(ns.update);
-task1.addObserver(ls.update);
-task1.addObserver(as.update);
-task1.save();
+var task1 = new ObservableTask({ name: 'create demo for constructor', user: 'John' }); // Object
+var ns = new notificationService(); // Subject
+var ls = new loggingService(); // Subject
+var as = new auditingService();// Subject
+task1.addObserver(ns.update); // Oberver
+task1.addObserver(ls.update); // Oberver
+task1.addObserver(as.update);// Oberver
+task1.save(); // Object Communicating with Subject through Observer
 task1.removeObserver(as.update);
 task1.save();
