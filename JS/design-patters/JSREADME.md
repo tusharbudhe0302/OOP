@@ -48,7 +48,7 @@ Objects in JavaScript, just as in many other programming languages, can be compa
             console.log(task4.toString()); // My Task Description
             ```
     - Object.defineProperties 
-        *Object.defineProperties
+        * Object.defineProperties
     ```javascript 
     const object2 = {};
     Object.defineProperties(object2, {
@@ -61,9 +61,6 @@ Objects in JavaScript, just as in many other programming languages, can be compa
     console.log(object2.property1);
     // expected output: 42
     ```
-
-    -  Object.defineProperty
-    *Object.defineProperty
     ```javascript 
     var object1 = {};
     Object.defineProperty(object1, 'property1', {
@@ -78,8 +75,24 @@ Objects in JavaScript, just as in many other programming languages, can be compa
         object1.property1 = 77;
     // throws an error in strict mode
     ```
+    * Other Options
+    ```javascript  
+    Object.defineProperty(obj, prop, descriptor)
+    Object.defineProperties(obj, props)
+    Object.seal(task5);
+    obj.hasOwnProperty(prop)
+    Object.getOwnPropertyNames())
+    Object.isExtensible(object1), Object.preventExtensions(), Object.seal(), or Object.freeze()
+    ```
+    1.  writable: false | if you set to true can't modify function Or proprty 
+    2. enumerable: true
+    3. configurable: false | if you set to true can't modify Object. No duplicate Object 
+    4. seal  | new properties can be added to them, but can modify existing property 
+    5. freeze | Stop Inheritance
+    6. preventExtensions | Stop Inheritance , Stop Adding  , Stop Modifiying
 
-### typeof 
+### Types Of In Javascript  
+* typeof
 
 |Type   | Result |
 ---     | --     |
@@ -93,15 +106,6 @@ Objects in JavaScript, just as in many other programming languages, can be compa
 |Host object (provided by the JS environment) |	Implementation-dependent|
 |Function object (implements [[Call]] in ECMA-262 terms) |	"function"|
 |Any other object |	"object"|
-
- - Some Sample Code :
-   ```javascript 
-    var returntype;
-  if(isNaN()  == 'undefined' || isNaN()  == undefined)
-   returntype = true;
-   else returntype = false;
-   // this will return returntype as : false
-    ```
 
 ### Array Properties
 
@@ -206,9 +210,8 @@ Returns a new Array Iterator object that contains the values for each index in t
 
 ### Function.prototype
 
-- Function.bind()
- bind() method creates a new function 
- ** syntax : `function.bind(thisArg[, arg1[, arg2[, ...]]])`
+ *  bind() method creates a new function  
+  `function.bind(thisArg[, arg1[, arg2[, ...]]])`
 Code : 
  ```javascript 
  var module = { x: 42, getX: function() { return this.x; } }
@@ -219,18 +222,16 @@ var boundGetX = unboundGetX.bind(module);
 console.log(boundGetX());// expected output: 42
 ```
 
-- Function.apply()
-apply() method calls a function with a given this value, and arguments 
-** syntax : `function.apply(thisArg, [argsArray])`
+* apply() method calls a function with a given this value, and arguments  
+ `function.apply(thisArg, [argsArray])`
 Code :
  ```javascript 
  var numbers = [5, 6, 2, 3, 7];
 var max = Math.max.apply(null, numbers);
 console.log(max);// 7
 ```
-- Function.call()
-call()to chain constructors for an object, similar to Java
-** syntax :  `function.call(thisArg, arg1, arg2, ...)`
+* call() to chain constructors for an object, similar to Java
+`function.call(thisArg, arg1, arg2, ...)`
 Code:
 ```javascript 
 function Product(name, price) {
@@ -368,6 +369,7 @@ let wrap = createChainable(function*(iterable){
         yield item; 
     } 
 });
+```
 
 With the wrap function, we can now wrap any array, set or map and chain our previous function to it:
 ```javascript
@@ -390,4 +392,91 @@ Chainable.prototype.toArray = function(){
     } 
     return arr; 
 }
+```
+
+
+
+
+
+### Spread Operator in JavaScript
+
+
+- Expanding Arrays
+We can use the spread operator on iterables like a String or an array and it'll put the contents of the iterable into individual elements.
+
+```javascript
+let greet = ['Hello', 'World'];
+console.log(greet); // ['Hello', 'World']
+console.log(...greet); // Hello World
+```
+```javascript
+let greetings = "hello";
+let chars = [...greetings];
+console.log(chars); // [ 'h', 'e', 'l', 'l', 'o' ]
+```
+- Combining Arrays
+Let us take advantage of the fact that we can now expand an array using the spread operator.
+```javascript
+let blog1Subscribers = ['billy@example.com', 'sally@gmail.com'];
+let blog2Subscribers = ['timmy@gmail.com', 'tammy@example.com', 'tommy@gmail.com'];
+let subscribers = [...blog1Subscribers, ...blog2Subscribers];
+console.log(subscribers);
+ //[ 'billy@example.com', 'sally@gmail.com','timmy@gmail.com','tammy@example.com','tommy@gmail.com' ]
+```
+```javascript
+let arr1 = ['John', 'Sofia', 'Bob'];
+let arr2 = ['Julia', 'Sean', 'Anthony'];
+arr2.push(...arr2);
+console.log(arr1);
+// [ 'Julia', 'Sean', 'Anthony', 'John', 'Sofia', 'Bob' ]
+```
+- Copying Arrays and Objects
+In JavaScript every non-primitive entity is an Object, which means that arrays are also objects
+```javascript
+let arr1 = ['John', 'Sofia', 'Bob'];
+let arr2 = arr1;
+console.log(arr2); // [ 'John', 'Sofia', 'Bob' ]
+arr1.push('Sally'); // Change arr1
+console.log(arr2); // [ 'John', 'Sofia', 'Bob', 'Sally' ]
+```
+```javascript
+let arr1 = ['John', 'Sofia', 'Bob'];
+let arr2 = [...arr1];
+console.log(arr2); // [ 'John', 'Sofia', 'Bob' ]
+arr1.push('Sally'); // Change arr1
+console.log(arr2); // [ 'John', 'Sofia', 'Bob' ]
+```
+```javascript
+let arr1 = ['John', 'Sofia', 'Bob'];
+let arr2 = [...arr1, 'Anthony', 'Sean'];
+console.log(arr2); // ['John', 'Sofia', 'Bob', 'Anthony', 'Sean']
+```
+```javascript
+const billing = { billingContact: '0987654321', billingAddress: 'street no 123, xyz city' };
+const shipping = { shippingContact: '123456789', shippingAddress: 'street no 999, abc city' };
+const custInfo = { ...billing, ...shipping };
+console.log(custInfo);
+// {
+//   billingContact: '0987654321',
+//   billingAddress: 'street no 123, xyz city',
+//   shippingContact: '123456789',
+//   shippingAddress: 'street no 999, abc city'
+// }
+```
+```javascript
+const o1 = { a: 1, b: 2 };
+const o2 = { b: 3, c: 4, ...o1};
+console.log(o2); // { b: 2, c: 4, a: 1 }
+const o1 = { a: 1, b: 2 };
+const o2 = { ...o1, b: 3, c: 4};
+console.log(o2); // { a: 1, b: 3, c: 4 }
+```
+
+- Using with Math Functions
+JavaScript has a Math object which contains several methods to operate with a set of data, i.e. a list of data.
+```javascript
+let mylist = [10, 23, 83, -1, 92, -33, 76, 29, 76, 100, 644, -633];
+Math.max(mylist[0], mylist[1], mylist[2]); // 83
+let mylist = [10, 23, 83, -1, 92, -33, 76, 29, 76, 100, 644, -633];
+Math.max(...mylist); // 644
 ```
