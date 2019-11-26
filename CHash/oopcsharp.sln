@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting-Algorithm", "Sortin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackQueue", "StackQueue\StackQueue.csproj", "{A5CC1D29-BF0A-4E7D-A723-96D5E96862E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{667A386F-A07F-477A-BADE-5898FF3FC708}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{A5CC1D29-BF0A-4E7D-A723-96D5E96862E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5CC1D29-BF0A-4E7D-A723-96D5E96862E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5CC1D29-BF0A-4E7D-A723-96D5E96862E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667A386F-A07F-477A-BADE-5898FF3FC708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667A386F-A07F-477A-BADE-5898FF3FC708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667A386F-A07F-477A-BADE-5898FF3FC708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667A386F-A07F-477A-BADE-5898FF3FC708}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
